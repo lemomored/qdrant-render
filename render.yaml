@@ -8,6 +8,8 @@ services:
     startCommand: ""  # Par défaut, le CMD du Dockerfile sera utilisé
     envVars:
       - key: QDRANT__DATABASE__URL
-        value: postgres://<SUPABASE_USER>:<SUPABASE_PASSWORD>@<SUPABASE_HOST>:5432/<SUPABASE_DB>
+        value: postgres://<SUPABASE_USER>:<SUPABASE_PASSWORD>@<SUPABASE_HOST>:<SUPABASE_PORT>/<SUPABASE_DB>
+      - key: QDRANT__API__KEY
+        value: your-secure-api-key-here
       - key: PORT
         value: 6333
