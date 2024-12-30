@@ -6,7 +6,7 @@ services:
     plan: free
     branch: main # optional (defaults to master)
     numInstances: 1
-    healthCheckPath: /isrunning
+    healthCheckPath: /healthz
     dockerfilePath: ./Dockerfile
     buildCommand: ""  # Qdrant n'a pas besoin de build command spécifique
     startCommand: ""  # Par défaut, le CMD du Dockerfile sera utilisé
