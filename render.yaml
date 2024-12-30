@@ -2,7 +2,11 @@ services:
   - type: web
     name: qdrant
     env: docker
+    region: frankfurt # optional (defaults to oregon)
     plan: free
+    branch: main # optional (defaults to master)
+    numInstances: 1
+    healthCheckPath: /isrunning
     dockerfilePath: ./Dockerfile
     buildCommand: ""  # Qdrant n'a pas besoin de build command spécifique
     startCommand: ""  # Par défaut, le CMD du Dockerfile sera utilisé
