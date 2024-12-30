@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: qdrant
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    buildCommand: ""  # Qdrant n'a pas besoin de build command spécifique
+    startCommand: ""  # Par défaut, le CMD du Dockerfile sera utilisé
+    envVars:
+      - key: QDRANT__DATABASE__URL
+        value: postgres://<SUPABASE_USER>:<SUPABASE_PASSWORD>@<SUPABASE_HOST>:5432/<SUPABASE_DB>
+    ports:
+      - port: 6333
